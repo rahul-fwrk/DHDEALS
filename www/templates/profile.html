@@ -1,0 +1,47 @@
+<ion-view style="" id="page3" title="My Profile"hide-nav-bar="true">
+
+<ion-header-bar align-title="center" id="div1" class="bar-light">
+  <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="display:block;"></button>
+    </div>
+  <h1 class="title">My Profile</h1>
+  <div class="buttons">
+  </div>
+</ion-header-bar>
+    <ion-content class="has-header" padding="true">
+    
+    	<div class="profile">
+        	<div class="user_propic">
+            	<div class="user_img"><img src="{{profile.image}}" alt="" /></div>
+            </div>
+            <h5>{{profile.name}}</h5>
+            <p>Phone number {{profile.phone}}</p>
+        </div>
+    
+    
+        <div style="width: 283px; height: 83px;" class="spacer"></div>
+        
+        <div class="list pro_list">
+        <a class="item" ui-sref="menu.editinfo">
+            <i class="pro_icon fa fa-user"></i>
+            Edit Info
+            <i class="pro_iconr ion-ios-arrow-right"></i>
+          </a>
+<!--          <a class="item" ui-sref="menu.notification">
+            <i class="pro_icon fa fa-info-circle"></i>
+            Notification
+            <i class="pro_iconr ion-ios-arrow-right"></i>
+          </a>-->
+            <a class="item" ui-sref="menu.changepassword">
+            <i class="ion-compose"></i>
+            Change Password
+            <i class="pro_iconr ion-ios-arrow-right"></i>
+          </a>
+        </div>
+<!--<div class="custom_padding" style="padding:0;">
+        <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px;" id="createProfile-button2" ui-sref="menu.step1" href="#/side-menu21/step"><i style="margin-right:5px;" class="fa fa-sign-out"></i>SIGN OUT</a>
+        </div>-->
+        
+        
+    </ion-content>
+</ion-view>

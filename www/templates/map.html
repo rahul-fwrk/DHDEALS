@@ -1,0 +1,25 @@
+<ion-view style="" id="page5" title="Nearest Restaurants"  hide-nav-bar="true">
+
+<ion-header-bar align-title="center" class="bar-positive map_header">
+    <div class="buttons">
+       <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+    </div>
+    	<h1 class="title" style="line-height:1; left:53px; right:53px;"><span class="top_title">Amsterdam</span></h1>
+   	<div class="buttons">
+   		<button style="margin-right:15px;" class="button button-clear" ng-click="modal.show()"><i class="icon"><img width="16px" src="img/icon_arrow.png" alt="" /></i></button>
+        <button style="margin-right:10px;" class="button button-clear" ng-click="modal1.show()"><i class="icon"><img width="16px" src="img/icon_settings.png" alt="" /></i></button>
+        <button class="button button-clear"><i class="icon"><img width="16px" src="img/icon_search.png" alt="" /></i></button>
+ 	</div>
+    
+ </ion-header-bar>
+    <ion-content class="has-header" padding="false" style="top:0;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d13719.679330087241!2d76.84325505!3d30.72065405!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1474523981988" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        
+    </ion-content>
+     <button class="btn_map" style="bottom:55px;" id="fab">
+            <i class=""><img width="50px" src="img/geo_btn.png"></i>
+        </button>
+        <button class="btn_map" id="fab">
+            <i class=""><img width="50px" src="img/list_btn.png"></i>
+        </button>
+</ion-view>

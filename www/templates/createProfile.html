@@ -1,0 +1,55 @@
+<ion-view style="" id="page2" title="Signup" hide-nav-bar="true">
+
+<ion-header-bar align-title="center" id="div1" class="bar-light">
+<div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <h1 class="title">Signup</h1>
+  <div class="buttons">
+  </div>
+</ion-header-bar>
+
+    <ion-content class="has-header" padding="true">
+        <div style="width: 283px; height: 50px;" class="spacer"></div>
+        <div>
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/logo2.png" height="auto" width="200px">
+        </div>
+        <div style="width: 283px; height: 35px;" class="spacer"></div>
+        <form  name="register" class="list" id="createProfile-form1" ng-submit="registerUser()">
+        	<label id="createProfile-input1" class="item-input input_border">
+                <input placeholder="Name" type="text" name="name" ng-model="data.name" required>
+            </label>
+            <span style="color:red" ng-show="register.$submitted || register.name.$touched">
+                <span ng-show="register.name.$error.required">Name is required.</span> 
+            </span>
+            
+            <label id="createProfile-input2" class="item-input input_border">
+               <input placeholder="Phone number (Optional)" type="number" name="phone" ng-model="data.phone" ng-minlength="10">
+            </label>
+<!--            <span style="color:red" ng-show="register.$submitted || register.phone.$touched">
+                <span ng-show="register.phone.$error.required">Phone number is required.</span>
+            </span>-->
+             
+            <label id="createProfile-input4" class="item-input input_border">
+                <input placeholder="Email address" name="email" type="email" ng-model="data.email" required>
+            </label>
+            <span style="color:red" ng-show="register.$submitted || register.email.$touched">
+                <span ng-show="register.email.$error.required">Email is required.</span>
+            </span>
+            <label id="createProfile-input5" class="item-input input_border">
+                <input placeholder="Enter password" type="password" name="password" ng-model="data.password" required>
+            </label>
+            <span style="color:red" ng-show="register.$submitted || register.password.$touched">
+                <span ng-show="register.password.$error.required">Password is required.</span>
+            </span>
+       
+        <div class="custom_padding">
+        <input type="submit" class="button button_purpel button-block" ng-disabled="register.$invalid || register.$pristine"  style="border-radius:0px 0px 0px 0px;" id="createProfile-button2" value="SIGN UP">
+        </div>
+             </form>
+        <button class="button button-dark button_txt button-block button-clear" id="createProfile-button3" ui-sref="menu.signin">Already have An Account? <span>Sign In</span></button>
+    </ion-content>
+</ion-view>
+<style>
+.title.title-center.header-item{text-align: center;}
+</style>

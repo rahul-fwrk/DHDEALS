@@ -1,0 +1,24 @@
+<ion-view style="" id="page4" title="Final Step">
+    <ion-content class="has-header" padding="true">
+        <div style="width: 283px; height: 83px;" class="spacer"></div>
+        <div style="color:#000000;text-align:center;" id="finalStep-markdown2">
+            <p>Enter Verification Code</p>
+        </div>
+        <div style="width: 283px; height: 71px;" class="spacer"></div>
+        <form class="list" id="finalStep-form3" name='finalstep' ng-submit="finalstep.$valid &&email_verification()">
+            <label id="finalStep-input7" class="item-input input_border">
+                <input placeholder="Email Verification Code" type="text" name="email_code"  ng-model="data.verification_code" style="text-align:center;">
+            </label>
+            <div ng-show="finalstep.$submitted || finalstep.email_code.$touched">
+                <div ng-show="finalstep.email_code.$error.required" class="assertive">Field required
+                </div>
+            </div>
+        <div style="width: 283px; height: 27px;" class="spacer"></div>
+        <div class="custom_padding">
+        <input type="submit" class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px;" id="finalStep-button6" value="FINISH">
+        </div>
+        </form>
+        <button class="button button-dark button_txt button-block button-clear" id="createProfile-button3" ui-sref="menu.signin">Already have An Account? <span>Sign In</span></button>
+<!--        <button class="button button-dark button_txt button-block button-clear" id="finalStep-button7">Don't get a code?</button>-->
+    </ion-content>
+</ion-view>

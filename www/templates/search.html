@@ -1,0 +1,17 @@
+<ion-view style="" id="page5" title="Search"  hide-nav-bar="true">
+     <form class="search" name="seachform" ng-submit="searchByCity()">
+     <div class="bar bar-header item-input-inset" style="background:none; border:none;">    
+  <label class="item-input-wrapper" style="background:none; border-bottom:1px solid #ddd; border-radius:0;"> 
+    <input type="search" placeholder="Search" g-places-autocomplete ng-model="data.city" id="autocomplete">
+       </label> 
+         <button type="submit" class="search"><i class="icon placeholder-icon ion-search search"></i></button>
+<button class="icon placeholder-icon close_icon" ui-sref="menu.nearestRestaurants({lat:lattitude,long:longitude})"><img style="margin-top:10px;" src="img/delete.png"></button>
+
+</div>
+         </form>
+ <ion-content class="has-header" padding="true" style="background:#fefefe;">
+      <div class="padding">
+      
+</div>
+    </ion-content>
+</ion-view>

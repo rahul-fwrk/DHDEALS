@@ -1,0 +1,83 @@
+<ion-view style="" id="page5" hide-nav-bar="true">
+<ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header1.jpg) no-repeat; background-size:cover;">
+    <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+    </div>
+    <!--{{catename}} -->
+   <h1 class="title" style="line-height:1 !important;"><span class="top_title">Deals</span> </h1>
+   	<div class="buttons">
+   		<button style="margin-right:9px;" class="button button-clear " ui-sref="menu.search({lat:lattitude,long:longitude})"><i style="font-size: 27px;" class="ion-ios-search"></i></button>
+                
+        <button style="margin-right:13px; margin-top:3px;" class="button button-clear" ng-click="modal1.show()"><i class="icon"><img width="20px" src="img/icon_settings.png" alt="" /></i></button>
+        
+<!--        <button style="margin-right:9px;" class="button button-clear" ng-click="popover.show($event)"><i style="font-size: 27px;" class="ion-android-more-vertical"></i></button>-->
+ 	</div>
+ </ion-header-bar>
+<div style=" background: rgba(255, 255, 255, 0.4) none repeat scroll 0 0;" class="bar bar-subheader map_tab"> 
+    <div class="button-bar bar-light">
+      <a class="button button-clear" ui-sref="menu.slider">Map</a>
+      <a class="button button-clear" style="background:url(img/header1.jpg) no-repeat; background-size:cover; color: #fff; ">List</a>
+    </div>
+    
+</div>
+    <ion-content class="has-header has-subheader restaurnatslisting" padding="false" scroll="true">
+         <div ng-if="products == null">
+             <div style="width: 283px; height: 45vh;" class="spacer"></div>
+             <p style="text-align: center;">No Deals Available</p>
+         
+         </div> 
+ <div ng-if="products" class="restaurant_list restaurant_listing" ng-repeat="restaurantlist in products | orderBy : floc">
+     <div class="new" ng-if="restaurantlist.Product.new == 1"><i class="str">New</i></div>
+     
+     <div>
+            <button ng-if="restaurantlist.Product.favrest == 1" class="heart_icons" ng-click="favorite(restaurantlist.Product.id,floc)"><img width="20px" src="img/heart-active.png"></button>
+            <button ng-if="restaurantlist.Product.favrest == 0" class="heart_icons" ng-click="favorite(restaurantlist.Product.id,floc)"><img width="20px" src="img/heart.png"></button>
+            
+           <a ui-sref="menu.restaurantpage({resid:restaurantlist.Restaurant.id,dist:restaurantlist[0].distance})">
+                <img style="display: block; margin-left: auto; margin-right: auto;height: 100%;width: 100%;
+    position: absolute;" src="{{restaurantlist.Product.image}}" height="auto" width="100%">
+                <div class="restaurant_con rest_cn">
+<!--                    <h1>{{restaurantlist.Product.views}}</h1>-->
+                    <p class="anyclass" style="color:#fff;font-size:12px;">{{restaurantlist.Product.name}}</p>
+<!--                    <div class="type">
+                        <span> {{restaurantlist.Cat.rest_type}} </span><br>
+                    </div>-->
+                </div>
+            </a>
+            </div>
+        </div>
+     
+
+    </ion-content>
+<div class="bar bar-footer side" scroll="true" style="background: #fff; padding: 0;">
+<ion-scroll zooming="true" direction="x" style="width: 500px; height: 81px; padding:0;">
+    
+    <form style="width: 100%; float: left;"> 
+        <div class="row categories" style="background: #fff; padding: 0;">
+                    
+            <div class="col">
+            <div class="filter_icon">
+                <div id="abc" style="position: relative;" class="f_img" ng-click="reset()"> <input type="radio" name="a"> <span><img id="abc" src="img/all.png" />  </span>  
+            </div>
+            </div>
+            </div>
+        <div class="col"  ng-repeat="cat in type">
+            <div class="filter_icon" id="cat3">
+            <div id="abc" style="position: relative;background:{{cat.Cat.color}} !important" class="f_img {{cat.Cat.rest_type}}" ng-click="categorize(cat.Cat.id,cat.Cat.rest_type, $event)"> <input type="radio" name="a"> <span><img id="abc{{cat.Cat.id}}" src="{{cat.Cat.image}}" />  </span>  
+            </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    </ion-scroll>
+</div>
+</ion-view>
+<script id="templates/popover.html" type="text/ng-template">
+      <ion-popover-view popover-trigger="show">
+        <ion-content>
+          <div class="list">
+          <ion-radio ng-repeat="type in restype" ng-click="filter(type.RestaurantsType.id)">{{type.RestaurantsType.name}}</ion-radio>
+          </div>
+        </ion-content>
+      </ion-popover-view>
+    </script>

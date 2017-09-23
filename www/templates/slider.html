@@ -1,0 +1,64 @@
+<ion-view style="" id="page1" hide-nav-bar="true">
+
+        <ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header1.jpg) no-repeat; background-size:cover;">
+    <div class="buttons">
+<button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+ </div>
+<h1 class="title" style="line-height:1 !important;text-align:center;"><img src="img/logo.png" /></h1>
+
+</ion-header-bar>
+   
+<div style=" background: rgba(255, 255, 255, 0.4) none repeat scroll 0 0;" class="bar bar-subheader map_tab"> 
+    <div style="border-bottom: 1px solid #cccccc;" class="button-bar bar-light">
+      <a class="button button-clear" style="background:url(img/header1.jpg) no-repeat; background-size:cover; color: #fff; ">Map</a>
+      <a class="button button-clear" ui-sref="menu.nearestRestaurants({lat:lat,long:long})">List</a>
+    </div>
+    <form class="search" name="seachform">
+     <div class="bar item-input-inset" style="background:none; border:none;">    
+  <label class="item-input-wrapper" style="background:none; border-bottom:1px solid #ddd; border-radius:0;"> 
+    <input type="search" placeholder="Search" g-places-autocomplete ng-model="data.city" id="autocomplete">
+       </label> 
+<!--         <button type="submit" class="search"><i class="icon placeholder-icon ion-search search"></i></button>-->
+<button type="reset" class="icon placeholder-icon close_icon" ng-click="rest()"><img style="margin-top:10px;" src="img/delete.png"></button>
+
+</div>
+         </form>
+</div>
+  <ion-content class="has-header has-subheader" padding="false" style="top:0;">     
+<ng-map style="display: block; height: 72.3vh !important; overflow: hidden; width: 100%; float: left;margin-top: 125px;" draggable="true"  id="map" center="[{{lat}}, {{long}}]" zoom="11">
+    <marker position="{{lat}},{{long}}" title="{{restautantlist.Restaurant.rest_name}}" visible="true" icon="img/map.png" size="1px">
+    </marker>
+    
+    <marker ng-repeat="restautantlist in products" position="{{restautantlist.Restaurant.latitude}},{{restautantlist.Restaurant.longitude}}" title="{{restautantlist.Restaurant.rest_name}}" visible="true" icon="{{restautantlist.Restaurant.marker}}" on-click="mapalert(restautantlist.Restaurant.id,restautantlist.Restaurant.rest_name,restautantlist.Restaurant.address,restautantlist.Restaurant.deals,restautantlist.Restaurant.new,restautantlist.Restaurant.logo,restautantlist[0].distance)">
+    </marker>
+    
+    <div id="location" class="f_img loc" ng-click="rest()" style="background:#4285F4;"><span><img src="img/curentloc.png" />  </span> </div>
+            </ng-map>
+ </ion-content>
+    <div class="bar bar-footer side" scroll="true" style="background: #fff; padding: 0;">
+<ion-scroll zooming="true" direction="x" style="width: 500px; height: 81px; padding:0;">
+    
+    <form style=" float: left;"> 
+    
+    <div class="row" style="background: #fff; padding: 0;">
+        
+            
+                <div class="col"> <div class="filter_icon">
+                <div id="abc" style="position: relative;" class="f_img" ng-click="resetcat()"> <input type="radio" name="a"> <span><img id="abc" src="img/all.png" />  </span>  
+            </div>
+            </div>
+                    </div>
+                <div class="col" ng-repeat="cate in slidertype">
+                <div class="filter_icon" id="cat3">
+            <div id="abc" style="position: relative;background: {{cate.Cat.color}} !important" class="f_img {{cate.Cat.rest_type}}" ng-click="category1(cate.Cat.id, $event)"> <input type="radio" name="a"> <span><img id="abc{{cate.Cat.id}}" src="{{cate.Cat.image}}" />  </span>  
+            </div>
+            </div>
+                </div>
+         </div>
+            </form>
+    </ion-scroll>
+
+</div>
+
+</ion-view>
+

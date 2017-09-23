@@ -1,0 +1,23 @@
+<ion-view style="" id="page2" hide-nav-bar="true">
+    
+   <ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header1.jpg) no-repeat; background-size:cover;">
+    <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+    </div>
+   <h1 class="title" style="line-height:1 !important;"><span class="top_title">FAQ's</span> </h1>
+   	<div class="buttons">
+        <button style="margin-right:5px;" class="button button-clear" ui-sref='menu.slider'><i class="icon ion-ios-home-outline"></i></button>
+ 	</div>
+ </ion-header-bar>
+    <ion-content class="has-header" padding="true">
+         
+        <div class="list card" ng-repeat = "faqs in faq">
+            <img class="full-image" src="{{faqs.image}}">
+     <div class="item item-body grid1">
+    <h2>{{faqs.title}}</h2>
+    <p ng-bind-html="faqs.description"></p>
+
+  </div>
+        </div>
+    </ion-content>
+</ion-view>

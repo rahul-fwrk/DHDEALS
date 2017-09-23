@@ -1,0 +1,31 @@
+<ion-view style="" id="page5" title="Recently Viewed"  hide-nav-bar="true">
+     <ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header1.jpg) no-repeat; background-size:cover;">
+    <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+    </div>
+   <h1 class="title" style="line-height:1 !important;"><span class="top_title">Recently Viewed</span> </h1>
+   	<div class="buttons">
+        <button style="margin-right:5px;" class="button button-clear" ui-sref='menu.slider'><i class="icon ion-ios-home-outline"></i></button>
+ 	</div>
+ </ion-header-bar>
+    
+    
+    <ion-content class="has-header restaurnatslisting" padding="false">
+        <div ng-if="Recentviewed == null">
+             <div style="width: 283px; height: 45vh;" class="spacer"></div>
+             <p style="text-align: center;">No Deals Available</p>
+         
+         </div>  
+        <div ng-if="Recentviewed" class="restaurant_list restaurant_listing"  ng-repeat="recent in Recentviewed | limitTo: 15">
+            <a ng-click="recentview(recent.Product.id,recent.Product.distance)">
+                <img style="display: block; margin-left: auto; margin-right: auto;position: absolute;height: 100%;" src="{{recent.Product.image}}" height="auto" width="100%">
+                <div class="restaurant_con rest_cn">
+                    <h1>{{recent.Product.views}}</h1>
+                    <h1>{{recent.Product.name}}</h1>
+                     <span style="font-size:11px;">{{recent.Product.created}}</span>
+                </div>
+            </a>
+        </div>
+
+    </ion-content>
+</ion-view>

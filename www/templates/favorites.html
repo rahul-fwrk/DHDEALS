@@ -1,0 +1,33 @@
+<ion-view style="" id="page5" hide-nav-bar="true">
+
+    <ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header1.jpg) no-repeat; background-size:cover;">
+    <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+    </div>
+   <h1 class="title" style="line-height:1 !important;"><span class="top_title">Favorite List</span> </h1>
+   	<div class="buttons">
+        <button style="margin-right:5px;" class="button button-clear" ui-sref='menu.slider'><i class="icon ion-ios-home-outline"></i></button>
+ 	</div>
+ </ion-header-bar> 
+    <ion-content class="has-header restaurnatslisting" padding="false">
+
+<div ng-if="favoritelist == null">
+    <div style="width: 100%; height: 45vh; float: left;" class="spacer"></div>
+             <p style="text-align: center; width: 100%;">No Deals Available</p>
+</div> 
+        <div ng-if="favoritelist" class="restaurant_list restaurant_listing" ng-repeat="favorite in favoritelist">
+    <div class="new" ng-if="favorite.isnew == 5"><i class="str">New</i></div>
+    
+            <button ng-if="favorite.Product.favrest == 1" class="heart_icons" ng-click="favoritelisting(favorite.Product.id)"><img width="20px" src="img/heart-active.png"></button>
+            <button ng-if="favorite.Product.favrest == 0" class="heart_icons" ng-click="favoritelisting(favorite.Product.id)"><img width="20px" src="img/heart.png"></button>
+            <a ui-sref="menu.restaurantDetails({proid:favorite.Product.id,dist:favorite.distance})">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="{{favorite.Product.image}}" height="auto" width="100%">
+                <div class="restaurant_con rest_cn">
+                    <h1>{{favorite.Product.views}}</h1>
+                    <h1>{{favorite.Product.name}}</h1>
+
+                </div>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

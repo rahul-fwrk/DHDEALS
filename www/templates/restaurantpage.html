@@ -1,0 +1,126 @@
+<ion-view style="" id="page7" title="Restaurant Details" hide-nav-bar="true">
+
+   <div id="div1" class="bar bar-header bar-light map_header">
+  <button class="button back-button buttons  button-clear header-item" ng-click="$ionicGoBack()"><i class="icon ion-android-arrow-back"></i></button>
+  <h1 class="title">{{RestaurantDetail.Restaurant.rest_name}}</h1>
+  <button class="button button-clear icon ion-android-share-alt" ng-click="invitefriends(RestaurantDetail.Restaurant.rest_name,RestaurantDetail.Restaurant.logo)"></button>
+  
+</div> 
+
+    <ion-content class="has-header has-footer" padding="false" style="top:0;" on-scroll="scrollEvent()" delegate-handle="scrollHandle">
+    
+    	<div class="top_slider">
+        	<ion-slide-box css="mypager" on-slide-changed="slideHasChanged($index)">
+              <ion-slide>
+                <div class="box blue">
+                	<a><img src="{{RestaurantDetail.Restaurant.logo}}" alt="" /></a>
+                       
+                    <div class="restaurant_con" style="text-align:left;top:86spx;">
+                	<h4 style="color:#fff;">{{RestaurantDetail.Restaurant.rest_name}}</h4>
+                        
+                        <p style="color:#fff;margin-top:10px;">{{RestaurantDetail.Restaurant.deals}}</p>
+                    </div>
+<!--                         <button ng-if="RestaurantDetail.Restaurant.favrest == 1" class="heart_icons heartIcons" ng-click="favoriterest(RestaurantDetail.Restaurant.id)"><img width="20px" src="img/heart-active.png"></button>
+                         <button ng-if="RestaurantDetail.Restaurant.favrest == 0" class="heart_icons heartIcons" ng-click="favoriterest(RestaurantDetail.id)"><img width="20px" src="img/heart.png"></button>-->
+                </div>
+              </ion-slide>
+              <ion-slide>
+                <div class="box blue">
+                	<a href="#"><img src="{{RestaurantDetail.Restaurant.logo}}" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;top:86px;">
+                        <h4 style="color:#fff;">{{RestaurantDetail.Restaurant.rest_name}}</h4>
+                        
+                        <p style="color:#fff;margin-top:10px;">{{RestaurantDetail.Restaurant.deals}}</p>
+                    </div>
+                        
+<!--                        <button ng-if="RestaurantDetail.favrest == 1" class="heart_icons heartIcons" ng-click="favoriterest(RestaurantDetail.id)"><img width="20px" src="img/heart-active.png"></button>
+                        <button ng-if="RestaurantDetail.favrest == 0" class="heart_icons heartIcons" ng-click="favoriterest(RestaurantDetail.id)"><img width="20px" src="img/heart.png"></button>-->
+                </div>
+              </ion-slide>
+              <ion-slide>
+                <div class="box blue">
+                	<a href="#"><img src="{{RestaurantDetail.Restaurant.logo}}" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;top:86px;">
+                        <h4 style="color:#fff;">{{RestaurantDetail.Restaurant.rest_name}}</h4>
+                        
+                        <p style="color:#fff;margin-top:10px;">{{RestaurantDetail.Restaurant.deals}}</p>
+                    </div>
+<!--                        <button ng-if="RestaurantDetail.favrest == 1" class="heart_icons heartIcons" ng-click="favoriterest(RestaurantDetail.id)"><img width="20px" src="img/heart-active.png"></button>
+                        <button ng-if="RestaurantDetail.favrest == 0" class="heart_icons heartIcons" ng-click="favoriterest(RestaurantDetail.id)"><img width="20px" src="img/heart.png"></button>-->
+                </div>
+              </ion-slide>
+              <ion-slide>
+                <div class="box blue">
+                	<a href="#"><img src="{{RestaurantDetail.Restaurant.logo}}" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;top:86px;">
+                       <h4 style="color:#fff;">{{RestaurantDetail.Restaurant.rest_name}}</h4>
+                        
+                     <p style="color:#fff;margin-top:10px;">{{RestaurantDetail.Restaurant.deals}}</p>
+                    </div>
+<!--                        <button ng-if="RestaurantDetail.favrest == 1" class="heart_icons heartIcons" ng-click="favoriterest(RestaurantDetail.id)"><img src="img/heart-active.png"></button>
+                        <button ng-if="RestaurantDetail.favrest == 0" class="heart_icons heartIcons" ng-click="favoriterest(RestaurantDetail.id)"><img src="img/heart.png"></button>-->
+                </div>
+              </ion-slide>
+            </ion-slide-box>
+
+
+        </div>
+    <ion-list id="restaurantDetails-list2">
+            <ion-item style="white-space:normal; border:none; font-size:10px;" id="restaurantDetails-list-item4" class="item-icon-left">
+                <i class="icon"><img width="25px" src="img/geo_icon.png" alt="" /></i>{{RestaurantDetail.Restaurant.address}}</ion-item>
+        </ion-list>
+ <div class="map_diraction">
+        <a href="#" style="color:#000;">
+            <div class="restaurant_destination">     	
+            <h5 style="color:#000;"><i class=""><img src="img/detect.png"></i> {{dist}} <br /> KM</h5>
+                </div>
+                 </a>
+        </div>
+  <div class="padding">
+        	<div class="collapsed_list">
+        	<a href="#" class=""><i class="ion-ios-arrow-up"></i> INFO</a>
+        </div>
+        </div>
+        <div style="border:none;" id="restaurantDetails-list-item-container1" class="item item-body">
+            <div style="margin-top:0px;color:#000000;" id="restaurantDetails-markdown3">
+                <p class="collaped_txt" style="margin:0;">{{RestaurantDetail.Restaurant.description}}</p>
+            </div>
+        </div>
+        <ion-list id="restaurantDetails-list5">
+            <ion-item style="" id="restaurantDetails-list-item8" class="item-icon-right list_viewmenu">
+                <i style="color:#0F75BC;" class="icon fa "></i>PHONE : {{RestaurantDetail.Restaurant.phone}}</ion-item>
+        </ion-list>
+        <ion-list id="restaurantDetails-list5">
+            <ion-item style="" id="restaurantDetails-list-item8" class="item-icon-right list_viewmenu">
+                <i style="color:#0F75BC;" class="icon fa fa-link"></i>WEBSITE : {{RestaurantDetail.Restaurant.website}}</ion-item>
+        </ion-list>
+        <ion-list id="restaurantDetails-list5">
+            <ion-item style="" id="restaurantDetails-list-item8" class="item-icon-right list_viewmenu">
+                <i style="color:#0F75BC;" class="icon fa fa-link"></i>FACEBOOK : {{RestaurantDetail.Restaurant.fblink}}</ion-item>
+        </ion-list>
+        <div class="padding">
+        	<div class="collapsed_list">
+        	<a href="#" class=""><i class="ion-ios-arrow-up"></i>DEALS</a>
+        </div>
+        </div>
+        <div class="list" ng-repeat="products in RestaurantDetail.Product" ui-sref="menu.restaurantDetails({proid:products.id,dist:dist})">
+
+            <a class="item item-thumbnail-left" style="border-top: none;">
+              <img src="{{products.image}}">
+              <h2>{{products.name}}</h2>
+              <p>{{products.description}}</p>
+            </a>
+        </div>
+        <div class="padding">
+        	<div class="collapsed_list">
+        	<a href="#" class=""><i class="ion-ios-arrow-up"></i> CONTACTS</a>
+        </div>
+        </div>
+        <div class="contacts">
+            <div class="padding"><p>Ground Level</p><p>{{RestaurantDetail.Restaurant.address}}<br/>{{RestaurantDetail.Restaurant.phone}}</p></div>
+        </div>
+        
+        
+    </ion-content>
+
+</ion-view>

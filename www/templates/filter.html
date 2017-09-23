@@ -1,0 +1,59 @@
+ <ion-modal-view>
+     <div class="bar bar-header item-input-inset" style="background:none; border:none;">
+        <button class="button button-clear icon ion-ios-arrow-back" ng-click = "closeModal1()"></button>
+            <p class="title">Filter</p>
+      </div>
+     <form name="filter" style=" height: 90vh; position: relative;">
+     <ion-pane>
+ <ion-content padding="true" style="background:#fefefe;">
+     <ion-list style="width: 100%;float: left;height: 84vh;">
+         
+        <div class="shortby">
+       	  <p>Sort By</p>
+          <div class="row shot_list">
+            <div class="col" ng-click="distance()"> 
+<!--                <input type="radio" name="a" ng-value="price"/>{{fil}} {{fill}}-->
+
+                <span class="" style="text-align: center;"><i class="fa fa-location-arrow"></i><br>Distance</span>
+            </div>
+            <div class="col" ng-click="filterbyname()">
+<!--                 <input type="radio" name="a" value="rating" />-->
+                     <span class="" style="text-align: center;"><i class="fa fa-sort-alpha-asc"></i><br>Name</span>
+             </div>
+          </div>
+       </div>
+       <div class="filter_top filter_top1">
+           <p class="padding">Filter</p>
+      	<ul>
+          <li ng-repeat="restaurantlist in type" ng-class="data.category_name[restaurantlist.Cat.id] ? 'active' : ''">
+          <input type="checkbox" class="{{restaurantlist.Cat.rest_type}}" ng-model="data.category_Name[restaurantlist.Cat.id]" ng-value="restaurantlist.Cat.rest_type"/> 
+          <span>{{restaurantlist.Cat.rest_type}}</span></li>
+        </ul>
+      </div>
+<!--         <div class="filter_top filter_top1 fil_type">
+           <p class="padding">{{filterby}}</p>
+      	<ul>
+          <li ng-repeat="catlist in restype" ng-class="data.category_type[catlist.RestaurantsType.id] ? 'active' : ''">
+          <input type="checkbox" ng-model="data.category_type[catlist.RestaurantsType.id]" ng-value="restaurantlist.Cat.rest_type"/> 
+          <span>{{catlist.RestaurantsType.name}}</span></li>
+        </ul>
+      </div>-->
+        
+         
+        </ion-list>
+        
+    </ion-content>
+     <div class="bar bar-footer" style="padding: 0;">
+      
+<div class="buttons" style="width:50%; float:left;">
+    <input type="reset" value="Reset" class="button" style="width:100%; background:url(img/header1.jpg) no-repeat; border-radius: 0px; background-size:cover; color:#fff; font-size: 14px;" ng-click="reset()">
+  </div>
+ <div class="buttons" style="width:50%; float:left; ">
+    <button class="button" style="width:100%;background:url(img/header1.jpg) no-repeat; background-size:cover; border-radius: 0px;  color:#fff; font-size: 14px;" ng-click="apply()">Apply</button>
+  </div>
+
+      </div>  
+     </div>
+     </ion-pane>
+     </form> 
+  </ion-modal-view>

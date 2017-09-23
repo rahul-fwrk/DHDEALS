@@ -1,0 +1,38 @@
+<ion-view style="" id="signin" title="Sign in">
+
+<!--<ion-header-bar align-title="center" id="div1" class="bar-light">
+ <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <h1 style="text-align:center" class="title">Sign in</h1>
+  <div class="buttons">
+  </div>
+</ion-header-bar>-->
+
+    <ion-content class="has-header" padding="true" scroll="true">
+       <div style="width: 283px; height: 50px;" class="spacer"></div>
+            <img style="display: block; margin-left: auto; margin-right: auto; position: relative; top: -20px;" src="img/logo2.png" height="auto" width="190px">
+        <form class="list" id="createProfile-form1" name="Myform" ng-submit="LoginUser()">
+            <label id="createProfile-input2" class="item-input input_border">
+                <input placeholder="Email address" type="email" name="email" ng-model="data.email" required>
+            </label>
+           <span style="color:red" ng-show="Myform.$submitted || Myform.email.$touched">
+                <span ng-show="Myform.email.$error.required">Email is required.</span>
+            </span>
+            <label id="createProfile-input5" class="item-input input_border">
+                <input placeholder="Enter password" type="password" ng-model="data.password" name="password" required>
+            </label>
+            <span style="color:red;float:left;" ng-show="Myform.$submitted || Myform.password.$touched">
+                <span ng-show="Myform.password.$error.required">Password is required.</span>
+            </span>
+             <div style="width: 283px; height: 18px; float:left;" class="spacer"></div>
+        <div class="custom_padding">
+        <input type="submit" class="button button_purpel button-block" ng-disabled="Myform.$invalid || Myform.$pristine" style="border-radius:0px 0px 0px 0px;" id="createProfile-button2" value="SIGN IN">
+        </div>
+        </form> 
+            <div>
+                <a class="forgot-password" style="color: rgb(0, 0, 0); text-align: center; width: 100%; float: left;" ui-sref="menu.forgetPassword">Forgot password</a>
+                <a class="forgot-password" style="color: rgb(0, 0, 0); text-align: center; width: 100%; float: left;" ui-sref="menu.createProfile">You Don't have Account ? Sign Up</a>
+        </div>
+    </ion-content>
+</ion-view>

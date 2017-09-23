@@ -1,0 +1,28 @@
+<ion-view style="" id="page2" title="Edit Info">
+    <ion-content class="has-header" padding="true">
+    
+    	<div class="profile">
+        	<div class="user_propic">
+            	<div class="user_img"><img src="{{profile.image}}" alt="" />
+                
+                </div>
+                    <button ng-click="picture()" class="camera"><i class="ion-camera"></i></button>
+            </div>
+            <h5>{{profile.name}}</h5>
+            <p>Phone number {{profile.phone}}</p>
+        </div>
+        
+  <div style="width: 283px; height: 83px;" class="spacer"></div>
+        <form class="editinfo" name="editinfo" ng-submit="editprofile()">
+        <div class="list">
+  <label class="item item-input">
+    <input type="text" placeholder="User Name" ng-model="data.name">
+  </label>
+  <label class="item item-input">
+   <input type="text" placeholder="Phone Number" ng-model="data.phone" on-focus="this.type='number'" ng-pattern='/^[0-9]*$/'>
+  </label>
+ <button type="submit" class="button button_purpel  button-block" style="border-radius:0;">SAVE</button>
+</div>
+        </form>
+</ion-content>
+</ion-view>
